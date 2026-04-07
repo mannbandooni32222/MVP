@@ -1,0 +1,5 @@
+{
+  "name": "Smart Planner",
+  "description": "A simple MVP mobile-first task planner with brain dump parsing and horizontal calendar.",
+  "requestFramePermissions": []
+}
