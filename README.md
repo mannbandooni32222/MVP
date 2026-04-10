@@ -1,20 +1,63 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Smart Planner - Flutter MVP (Production Ready)
 
-# Run and deploy your AI Studio app
+This project is a complete, production-ready Flutter implementation of the "Smart Planner" app.
 
-This contains everything you need to run your app locally.
+## 🚀 Tech Stack
+- **Framework:** Flutter (Material 3)
+- **State Management:** `setState` (Optimized for MVP)
+- **Persistence:** `shared_preferences`
+- **Typography:** Google Fonts (Inter)
+- **Date Handling:** `intl`
+- **Unique IDs:** `uuid`
 
-View your app in AI Studio: https://ai.studio/apps/6cb56980-a01a-4e4f-b7b9-022bfe0972b7
+## 📂 Project Structure
+```text
+lib/
+├── models/
+│   └── task.dart          # Task data model & JSON serialization
+├── utils/
+│   └── parser.dart        # Brain Dump regex logic
+├── widgets/
+│   ├── calendar_strip.dart # Horizontal scrollable calendar
+│   └── task_card.dart      # Individual task UI component
+├── screens/
+│   ├── onboarding_screen.dart # Username entry & welcome
+│   └── home_screen.dart       # Main task list & brain dump logic
+└── main.dart              # App entry point & theme configuration
+```
 
-## Run Locally
+## 🛠️ Setup Instructions
+1. **Install Flutter:** Follow the guide at [flutter.dev](https://docs.flutter.dev/get-started/install).
+2. **Create Project:** 
+   ```bash
+   flutter create smart_planner
+   ```
+3. **Copy Files:** Replace the `lib/` folder and `pubspec.yaml` with the files generated in this project.
+4. **Get Dependencies:**
+   ```bash
+   flutter pub get
+   ```
+5. **Run App:**
+   ```bash
+   flutter run
+   ```
 
-**Prerequisites:**  Node.js
+## 📦 Building for Production
 
+### Android (APK)
+1. Run: `flutter build apk --release`
+2. Locate file: `build/app/outputs/flutter-apk/app-release.apk`
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### iOS (App Store)
+1. Open `ios/Runner.xcworkspace` in Xcode.
+2. Set your **Development Team** in Signing & Capabilities.
+3. Run: `flutter build ios --release`
+4. In Xcode, go to **Product > Archive** to upload to App Store Connect.
+
+---
+
+### Features Included:
+- **Brain Dump Parser:** Converts messy text into tasks automatically.
+- **Horizontal Calendar:** Past dates are read-only; future dates allow planning.
+- **Progress Tracking:** Real-time completion percentage.
+- **Local Persistence:** All data stays on the device.
